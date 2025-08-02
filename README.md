@@ -1,3 +1,98 @@
+# Risky Portfolio Simulation using the Binomial Distribution
+
+This repository contains an R script that simulates the performance of a risky portfolio over a fixed number of days. Each day, the portfolio has a fixed probability of producing a gain. The simulation models this behavior using the **binomial distribution**, allowing you to analyze how the number of profitable days evolves with increasing time horizons.
+
+---
+
+## Objective
+
+We simulate a portfolio that runs for ( $$n$$ ) days, where each day is an independent trial with:
+
+- Probability of gain (success): ( $$p = 0.1$$ )
+- Probability of loss: ( $$1 - p = q$$ )
+
+For each value of ( $$n$$ ), we simulate **1000 independent portfolios**, each composed of ( $$n$$ ) daily trades. We record how many of those ( $$n$$ ) days ended in profit for each simulation.
+
+The number of profitable days in each simulation follows a **Binomial distribution**:
+
+$$X \sim \text{Binomial}(n, p)$$
+
+---
+
+## Theoretical Background
+
+Key formulas for the binomial distribution:
+
+- **Expected value**:
+- 
+  $$E[X] = n \cdot p$$
+
+- **Variance**:  
+  
+  $$\sigma^2(X) = n \cdot p \cdot (1 - p)$$
+  
+
+This reflects the total number of successes (profitable days) in ( $$n$$ ) independent Bernoulli trials.
+
+---
+
+## Code Description
+
+The script performs the following steps:
+
+1. Loops over increasing values of ( $$n$$ ) (e.g., 1 to 1000)
+2. For each ( $$n$$ ), simulates 1000 portfolios of ( $$n$$ ) days
+3. Plots a histogram showing the number of profitable days
+4. Prints the empirical mean and standard deviation compared to the theoretical ones
+5. Pauses between plots for user interaction
+
+## Results
+
+Below are representative histograms for selected values of `n`:
+
+### n = 10
+
+Distribution is skewed and discrete. Most portfolios yield 0 or 1 profitable days.
+
+![n = 10](figures/binomial_n10.png)
+
+---
+
+### n = 100
+
+The shape starts resembling a normal distribution centered around the mean ( $$\mu = 10$$ ).
+
+![n = 100](figures/binomial_n100.png)
+
+---
+
+### n = 1000
+
+Clear convergence to a Gaussian shape due to the Central Limit Theorem.
+
+![n = 1000](figures/binomial_n1000.png)
+
+---
+
+## Interpretation
+
+This simulation answers the question:
+
+> How many profitable days can I expect from a high-risk portfolio over a given time frame?
+
+- As expected, the mean number of gains grows linearly with ( $$n$$ )
+- The standard deviation grows like ( $$\sqrt{n}$$ ), leading to relatively tighter relative variation
+- For large ( $$n$$ ), the distribution becomes approximately normal
+
+This model captures how randomness in daily returns accumulates over time and illustrates both short-term volatility and long-term convergence properties.
+
+---
+
+## Conclusion
+
+This simple yet powerful simulation demonstrates how the binomial distribution can model the number of profitable days in a risky portfolio. It provides useful insights into expected return variability and the emergence of Gaussian behavior in aggregated financial outcomes.
+
+
 # Portfolio Waiting Time Simulation (Geometric Distribution)
 
 This repository simulates the waiting time until the first success in a probabilistic financial scenario, modeled using the geometric distribution. The project is written in R and uses simple Monte Carlo simulation techniques to build intuition about probabilistic behavior in finance.
