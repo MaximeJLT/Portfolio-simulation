@@ -54,7 +54,7 @@ Below are representative histograms for selected values of `n`:
 
 Distribution is skewed and discrete. Most portfolios yield 0 or 1 profitable days.
 
-![n = 10](figures/binomial_n10.png)
+![n = 10](figures/Rplot01.png)
 
 ---
 
@@ -62,7 +62,7 @@ Distribution is skewed and discrete. Most portfolios yield 0 or 1 profitable day
 
 The shape starts resembling a normal distribution centered around the mean ( $$\mu = 10$$ ).
 
-![n = 100](figures/binomial_n100.png)
+![n = 100](figures/Rplot2.png)
 
 ---
 
@@ -70,7 +70,7 @@ The shape starts resembling a normal distribution centered around the mean ( $$\
 
 Clear convergence to a Gaussian shape due to the Central Limit Theorem.
 
-![n = 1000](figures/binomial_n1000.png)
+![n = 1000](figures/Rplot3.png)
 
 ---
 
@@ -152,7 +152,7 @@ Below are sample histograms for various values of `n`:
 
 *Small sample size, high variance.*
 
-![n=10](figures/hist_n10.png)
+![n=10](figures/wait.png)
 
 ---
 
@@ -160,7 +160,7 @@ Below are sample histograms for various values of `n`:
 
 *Distribution shape starts to emerge.*
 
-![n=100](figures/hist_n100.png)
+![n=100](figures/wait2.png)
 
 ---
 
@@ -168,7 +168,7 @@ Below are sample histograms for various values of `n`:
 
 *Histogram closely matches the geometric PMF.*
 
-![n=1000](figures/hist_n1000.png)
+![n=1000](figures/wait3.png)
 
 ---
 
